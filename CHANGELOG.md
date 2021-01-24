@@ -6,7 +6,8 @@
 
 **Details**
 - `nflow-engine`
-  - `WorkflowInstanceService.updateWorkflowInstance` can now be used to update business key of the workflow instance.
+  - Use `WorkflowInstanceService.updateWorkflowInstance` to update the business key of the workflow instance.
+  - Use `StateExecution.setBusinessKey` to update the business key of the workflow instance after processing a state.
   - Use `QueryWorkflowInstances.setStateVariable` to limit search query by state variable name and key. Only the latest value of the state variable of the workflow instance is used.
 - `nflow-rest-api-common`, `nflow-rest-api-jax-rs`, `nflow-rest-api-spring-web`
   - `UpdateWorkflowInstanceRequest.businessKey` field was added to support updating workflow instance business key via REST API.
