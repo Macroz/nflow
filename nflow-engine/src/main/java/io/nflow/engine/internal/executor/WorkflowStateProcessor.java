@@ -270,6 +270,9 @@ class WorkflowStateProcessor implements Runnable {
         .setStateText(getStateText(instance, execution)) //
         .setState(execution.getNextState()) //
         .setRetries(execution.isRetry() ? execution.getRetries() + 1 : 0);
+    if (execution.getNewBusinessKey() != null) {
+      instanceBuilder.setBusinessKey(execution.getNewBusinessKey());
+    }
     while (true) {
       try {
         return persistWorkflowInstanceState(execution, instance.stateVariables, actionBuilder, instanceBuilder);
